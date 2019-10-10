@@ -35,6 +35,7 @@ public class DetailActivity extends AppCompatActivity {
         //Once grabbed, use get methods to grab all the details needed and display
         headline1.setText(article1.getHeadline());
         text.setText(article1.getContent());
+        articleImage.setImageResource(article1.getImageDrawableId());
         //articleImage.setImageResource(article1.getImageDrawableId());
 
 

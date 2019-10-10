@@ -56,7 +56,7 @@ public ArrayList<Article> articles;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ArticleViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ArticleViewHolder holder, final int position) {
 
       //Need to create a Article object that references an object in an Array List.
         Article currentArticle = articles.get(position);
@@ -66,6 +66,17 @@ public ArrayList<Article> articles;
         holder.photo.setImageResource(currentArticle.getImageDrawableId());
 
         //view itself;
+        holder.view.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View views) {
+
+                holder.headline.getContext().startActivity(new Intent(holder.headline.getContext(), DetailActivity.class));
+                Intent startIntent = new Intent(holder.headline.getContext(), DetailActivity.class);
+                startIntent.putExtra("articleID", (position + 1));
+                holder.headline.getContext().startActivity(startIntent);
+            }
+
+
+        });
 
 
         //Share button
