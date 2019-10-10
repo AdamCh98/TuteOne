@@ -1,8 +1,10 @@
-package com.example.tuteone;
-
 /***
  * Model class for news articles. This should be 100% familiar to you.
  */
+package com.example.tuteone;
+
+import android.graphics.drawable.Drawable;
+
 public class Article {
 
     // unique identifier of an article
@@ -20,12 +22,13 @@ public class Article {
     private int imageDrawableId;
 
 
-    public Article(int articleID, String headline, String author, String summary, String content) {
+    public Article(int articleID, String headline, String author, String summary, String content, int imageDrawableId) {
         this.articleID = articleID;
         this.headline = headline;
         this.author = author;
         this.summary = summary;
         this.content = content;
+        this.imageDrawableId = imageDrawableId;
     }
 
     public int getArticleID() {
